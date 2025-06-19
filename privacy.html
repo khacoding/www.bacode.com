@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy</title>
+    <style>
+                /* Privacy Page */
+                .privacy-page {
+            display: none;
+            padding: 5rem 0;
+        }
+        
+        .privacy-page.active {
+            display: block;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .privacy-page h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .privacy-page h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .privacy-page h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .privacy-page p {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .privacy-page ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .privacy-page li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .privacy-page li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .highlight {
+            background-color: rgba(105, 40, 203, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        
+        .update-info {
+            background: #fff8e6;
+            border: 1px solid #ffeeba;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .update-info i {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #f0f7ff, #e6f7ff);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border: 1px solid #d1e9ff;
+        }
+        
+        .contact-box h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero p {
+                max-width: 100%;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .content-card, .privacy-page .content-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+<div class="privacy-page" id="privacy-page">
+    <div class="container">
+        <div class="content-card">
+            <h2>Privacy Policy</h2>
+            <p>This Privacy Policy outlines how I, as an independent freelancer, collect, use, disclose, and safeguard your information when you visit my website or engage my services. Please read this policy carefully to understand my practices regarding your personal data.</p>
+            
+            <div class="update-info">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <p><strong>Last Updated:</strong> June 15, 2025</p>
+                    <p>I may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-card">
+            <h2>Information I Collect</h2>
+            
+            <h3>Personal Information</h3>
+            <p>I may collect personal information that you voluntarily provide to me when you:</p>
+            <ul>
+                <li>Contact me through forms or email</li>
+                <li>Subscribe to my newsletter</li>
+                <li>Engage my services as a client</li>
+                <li>Make payments through Stripe</li>
+            </ul>
+            
+            <h3>Payment Information</h3>
+            <p>When you make payments through Stripe, I do not store your payment details. Stripe securely processes all payments and I only receive:</p>
+            <ul>
+                <li>Transaction ID</li>
+                <li>Payment amount</li>
+                <li>Payment status</li>
+                <li>Your name and email associated with the payment</li>
+            </ul>
+        </div>
+        
+        <div class="content-card">
+            <h2>How I Use Your Information</h2>
+            
+            <p>I use the information I collect for various purposes, including:</p>
+            <ul>
+                <li>To provide, operate, and maintain my services</li>
+                <li>To communicate with you regarding your projects</li>
+                <li>To process payments and send payment confirmations</li>
+                <li>To improve my website and services</li>
+            </ul>
+            
+            <div class="highlight">
+                <h3>Stripe Payment Processing</h3>
+                <p>All payments are processed securely through Stripe. I never have access to your credit card details. Stripe adheres to the highest security standards including PCI-DSS compliance. For more information, please see Stripe's <a href="https://stripe.com/privacy" target="_blank">Privacy Policy</a>.</p>
+            </div>
+        </div>
+        
+        <div class="content-card">
+            <h2>Information Sharing and Disclosure</h2>
+            
+            <p>I respect your privacy and do not sell, trade, or rent your personal information to third parties. However, I may share information in the following situations:</p>
+            
+            <ul>
+                <li><strong>Payment Processing:</strong> With Stripe to process payments</li>
+                <li><strong>Legal Requirements:</strong> When required by law</li>
+            </ul>
+        </div>
+        
+        <div class="contact-box">
+            <h3>Contact Me</h3>
+            <p>If you have any questions, please contact me:</p>
+            <p><i class="fas fa-envelope"></i> bacode@yahoo.com</p>
+            <a href="mailto:bacode@yahoo.com" class="btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

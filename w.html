@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Portfolio - Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="contact.html">
+    <link rel="stylesheet" href="contactform.html">
+
+    <style>
+        :root {
+            --primary: #5c22d8;
+            --secondary: #4615a9;
+            --accent: #7248ef;
+            --light: #f8f9fa;
+            --dark: #1f0dc2;
+            --gray: #6c757d;
+            --border: #dee2e6;
+            --success: #9535da;
+            --warning: #f72585;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9fbfd;
+            color: var(--dark);
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 100px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f0f7ff, #e6f7ff);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .hero-text {
+            flex: 1;
+            z-index: 2;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gray);
+            max-width: 600px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: rgb(255, 255, 255);
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.15);
+            border: px solid white;
+        }
+        
+        /* Services Section */
+        /* put space before pricing plan */
+        .section {
+            padding: 2rem 0;
+            background-color: #ffffff;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+
+           
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--dark);
+           
+            position: relative;
+            display: inline-block;
+            
+        }
+       
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+          
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: rgb(255, 255, 255);
+            border-radius: 12px;
+            padding: 2.5rem 2rem; 
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary);
+            padding-bottom: 5px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Pricing Section */
+        /* ok */
+         .pricing {
+            background: #f5f5f7;
+            padding: 9rem 0;
+            padding-top: 5px;
+
+        } 
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+            padding:3rem;
+
+        }
+        /* ok */
+        .pricing-card {
+            background: rgb(255, 255, 255);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+
+            
+        }
+        
+        .pricing-card.popular {
+            /* border: 2px solid var(--primary); */
+            /* transform: scale(1.03); */
+            transform: scale(1.00);
+
+            
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 1rem 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        .features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .features li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+        }
+        
+        .features li:last-child {
+            border-bottom: none;
+        }
+        
+        .features li i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Payment Button */
+        .payment-button {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 400;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        
+        .payment-button:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: #430eae;
+            color: white;
+            padding: 1rem 0 ;
+            /* position: absolute; */
+            bottom: 0;
+            width: 100%;
+       
+            /* position:; */
+            /* margin-top: 2rem; */
+
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 1.5rem;
+            /* opacity: 0.8; */
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #430eae;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+             /* padding-top: 2rem;  */
+
+            /* border-top: 10px solid rgba(175, 22, 22, 0.1); */
+            /* opacity: 0.7; */
+        }
+        
+        .footer-bottom p {
+            /* margin-bottom: 0.5rem; */
+        }
+        
+        .footer-bottom a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Privacy Page */
+        .privacy-page {
+            display: none;
+            padding: 5rem 0;
+        }
+        
+        .privacy-page.active {
+            display: block;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .privacy-page h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .privacy-page h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .privacy-page h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .privacy-page p {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .privacy-page ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .privacy-page li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .privacy-page li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .highlight {
+            background-color: rgba(105, 40, 203, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        
+        .update-info {
+            background: #fff8e6;
+            border: 1px solid #ffeeba;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .update-info i {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #f0f7ff, #e6f7ff);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border: 1px solid #d1e9ff;
+        }
+        
+        .contact-box h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero p {
+                max-width: 100%;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .content-card, .privacy-page .content-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-code"></i>
+                    Bacode
+                </a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link active" data-page="home">Home</a>
+                    <!-- ok -->
+                    <!-- <a href="contact.html" class="nav-link" data-page="services">Contact Us</a> -->
+                    <!-- <a href="#" class="nav-link" data-page="pricing">Pricing</a> -->
+                    <!-- <a href="#" class="nav-link" data-page="services">Services</a> -->
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy.html" class="nav-link" data-page="privacy">Privacy</a>
+                </div>
+                <a href="https://www.freelancer.com/u/yeslolah?frm=yeslolah&sb=t" class="btn">Hire Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content - Home Page -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Professional <span>Web Development</span> Services</h1>
+                        <p>create responsive websites and applications tailored to your business needs.</p>
+                        <div class="hero-btns">
+
+                            <!-- ok -->
+                            <a href="#services" class="btn">My Services</a>
+                            <a href="#pricing" class="btn btn-outline">View Pricing</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <!-- <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Development"> -->
+                        <!-- <img src="b.freelancer.png" alt="Web Development"> -->
+                        <img src="b.freelanc.png" alt="Web Development">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Services</h2>
+                    <p class="section-subtitle">offer a web development services to help your business thrive online</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom websites built with modern technologies like HTML5, CSS3, JavaScript, and React.js.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Responsive Design</h3>
+                        <p>Websites function perfectly.</p>
+                    </div>
+                    <!-- <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce Solutions</h3>
+                        <p>Online stores with secure payment gateways, inventory management, and order processing.</p>
+                    </div> -->
+                    <!-- <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimization</h3>
+                        <p>Websites optimized for search engines to increase visibility and drive organic traffic.</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Pricing Plans</h2>
+                    <p class="section-subtitle">Choose the plan that fits your needs and budget</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Basic Website</h3>
+                        <div class="price">€299 <span>/one-time</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 5 Custom Pages</li>
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> 1 Month Support</li>
+                        </ul>
+                        <button class="payment-button" id="payment-basic">Select Basic Plan</button>
+                    </div>
+                    
+                    <div class="pricing-card popular">
+                        <div class="popular-tag">Most Popular</div>
+                        <h3>Business Website</h3>
+                        <div class="price">€566 <span>/one-time</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 10 Custom Pages</li>
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> 3 Months Support</li>
+                        </ul>
+                        <button class="payment-button" id="payment-business">Select Business Plan</button>
+                    </div>
+                    
+                    <!-- <div class="pricing-card">
+                        <h3>E-commerce Store</h3>
+                        <div class="price">€1025 <span>/one-time</span></div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Full Online Store</li>
+                            <li><i class="fas fa-check"></i> Product Management</li>
+                            <li><i class="fas fa-check"></i> Secure Payment Gateway</li>
+                            <li><i class="fas fa-check"></i> Inventory System</li>
+                            <li><i class="fas fa-check"></i> 6 Months Support</li>
+                        </ul>
+                        <button class="payment-button" id="payment-ecommerce">Select E-commerce Plan</button>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Privacy Policy Page -->
+    <div class="privacy-page" id="privacy-page">
+        <div class="container">
+            <div class="content-card">
+                <h2>Privacy Policy</h2>
+                <p>This Privacy Policy outlines how I, as an independent freelancer, collect, use, disclose, and safeguard your information when you visit my website or engage my services. Please read this policy carefully to understand my practices regarding your personal data.</p>
+                
+                <div class="update-info">
+                    <i class="fas fa-info-circle"></i>
+                    <div>
+                        <p><strong>Last Updated:</strong> June 15, 2025</p>
+                        <p>I may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h2>Information I Collect</h2>
+                
+                <h3>Personal Information</h3>
+                <p>I may collect personal information that you voluntarily provide to me when you:</p>
+                <ul>
+                    <li>Contact me through forms or email</li>
+                    <li>Subscribe to my newsletter</li>
+                    <li>Engage my services as a client</li>
+                    <li>Make payments through Stripe</li>
+                </ul>
+                
+                <h3>Payment Information</h3>
+                <p>When you make payments through Stripe, I do not store your payment details. Stripe securely processes all payments and I only receive:</p>
+                <ul>
+                    <li>Transaction ID</li>
+                    <li>Payment amount</li>
+                    <li>Payment status</li>
+                    <li>Your name and email associated with the payment</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h2>How I Use Your Information</h2>
+                
+                <p>I use the information I collect for various purposes, including:</p>
+                <ul>
+                    <li>To provide, operate, and maintain my services</li>
+                    <li>To communicate with you regarding your projects</li>
+                    <li>To process payments and send payment confirmations</li>
+                    <li>To improve my website and services</li>
+                </ul>
+                
+                <div class="highlight">
+                    <h3>Stripe Payment Processing</h3>
+                    <p>All payments are processed securely through Stripe. I never have access to your credit card details. Stripe adheres to the highest security standards including PCI-DSS compliance. For more information, please see Stripe's <a href="https://stripe.com/privacy" target="_blank">Privacy Policy</a>.</p>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h2>Information Sharing and Disclosure</h2>
+                
+                <p>I respect your privacy and do not sell, trade, or rent your personal information to third parties. However, I may share information in the following situations:</p>
+                
+                <ul>
+                    <li><strong>Payment Processing:</strong> With Stripe to process payments</li>
+                    <li><strong>Legal Requirements:</strong> When required by law</li>
+                </ul>
+            </div>
+            
+            <div class="contact-box">
+                <h3>Contact Me</h3>
+                <p>If you have any questions, please contact me:</p>
+                <p><i class="fas fa-envelope"></i> bacode@yahoo.com</p>
+                <a href="mailto:bacode@yahoo.com" class="btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- <div class="footer-content">
+                <div class="footer-col">
+                    <h4>About Me</h4>
+                    <p>Professional web developer creating responsive, user-friendly websites and applications.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="privacy-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@devfreelance.com"><i class="fas fa-envelope"></i> b.freelancer@yahoo.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +31 686475545</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Netherland, Leiden</a></li>
+                    </ul>
+                </div>
+            </div> -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 B.Freelancer. All rights reserved.</p>
+                <p>Payment processing powered by <a href="https://stripe.com" target="_blank">Stripe</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            const privacyLink = document.querySelector('.privacy-link');
+            const homePage = document.querySelector('main');
+            const privacyPage = document.getElementById('privacy-page');
+            
+            // Function to show a specific page
+            function showPage(pageId) {
+                // Hide all pages
+                homePage.style.display = 'none';
+                privacyPage.classList.remove('active');
+                
+                // Show the requested page
+                if (pageId === 'home') {
+                    homePage.style.display = 'block';
+                } else if (pageId === 'privacy') {
+                    privacyPage.classList.add('active');
+                    window.scrollTo(0, 0);
+                }
+                
+                // Update active navigation link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Add click event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
+            
+            // Add click event listener to footer privacy link
+            privacyLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('privacy');
+            });
+            
+            // Stripe payment buttons
+            document.getElementById('payment-basic').addEventListener('click', function() {
+                // Replace with your actual Stripe payment link
+                window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
+            });
+            
+            document.getElementById('payment-business').addEventListener('click', function() {
+                // Replace with your actual Stripe payment link
+                window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
+            });
+            
+            document.getElementById('payment-ecommerce').addEventListener('click', function() {
+                // Replace with your actual Stripe payment link
+                window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
+            });
+            
+            // Initialize with home page
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
