@@ -1,14 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact</title>
-    <link rel="stylesheet" href="contact.html">
-</head>
-
+    <title>on</title>
+    <link rel="stylesheet" href="privacy.html">
     <style>
         :root {
             --primary: #5c22d8;
@@ -30,7 +26,7 @@
         }
         
         body {
-            background-color:#f9fbfd;;
+            background-color: #f9fbfd;
             color: var(--dark);
             line-height: 1.6;
             position: relative;
@@ -52,14 +48,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            /* color: white; */
-
-        }
-        
-
-        .nav-link{
-            color: rgb(64, 14, 151);
-
         }
         
         .navbar {
@@ -67,24 +55,144 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 0;
-            /* color: white; */
         }
-        
+      
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
             font-weight: 700;
             font-size: 1.5rem;
-            color: rgb(87, 12, 157);
+            color: var(--primary);
             text-decoration: none;
-        
+        }
+         
+        .logo i {
+            /* color: var(--accent); */
+            color: red;
+            border: 1px solid orange;
+
 
         }
+
+        /* .logo i{
+            color: green;
+            
+        } */
         
-        .logo i {
-            color: var(--accent);
+        .nav-links {
+            display: flex;
+            gap: 30px;
         }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+    /* form section */
+ /* .con{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: ;
+
+ }
+    .contact-form {
+    max-width: 500px; margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #4615a9; border-radius: 5px;
+    }
+
+    .form-group { 
+        margin-bottom:15px; 
+        border-color: #4615a9;;
+
+}
+
+    label {
+        display: block; 
+        margin-bottom: 5px;
+          }
+
+    input, textarea {
+    width: 100%; 
+    padding: 8px; 
+    box-sizing: border-box;
+    color: #000000;
+    border-color:#4615a9 ;
+    }
+
+    button {
+    background: #4615a9;
+    color: white; border: none;
+    padding: 15px 30px; 
+    cursor: pointer;
+    border-radius: 3px;
+    align-items: center;
+    display: inline-block;
+    
+    
+
+
+    }
+   
+    */
+  
+    .containe{
+        margin-left: 10px;
+
+    }
 .conta {
     background: var(--dark);
     color: rgb(16, 168, 67);
@@ -171,7 +279,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(153, 24, 24, 0.1);
     color: rgb(133, 7, 95);
     transition: all 0.3s ease;
 }
@@ -196,34 +304,22 @@
     color: var(--accent);
     text-decoration: none;
 }
-
-
-/* footer {
-            background: var(--dark);
-            color: white;
-            padding: 4rem 0 2rem;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-           
-} */
-               /* Footer */
-               footer {
+        /* Footer */
+        footer {
+            position: sticky;
+            margin-top: 100px;
             background: #430eae;
             color: white;
             padding: 1rem 0 ;
             /* position: absolute; */
             bottom: 0;
             width: 100%;
+            height: 50%;
+       
+            /* position:; */
             /* margin-top: 2rem; */
 
-            padding-left: 30px;
-            padding-bottom: 10px;
-            position: sticky;
-
-            top:90%;
-        } 
-
+        }
         
         .footer-content {
             display: grid;
@@ -233,8 +329,7 @@
         }
         
         .footer-col h4 {
-            /* font-size: 1.3rem; */
-            font-size: 6rem;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 10px;
@@ -299,7 +394,7 @@
         }
         
         .social-links a:hover {
-            background: var(--primary);
+            background: #430eae;
             transform: translateY(-3px);
         }
         
@@ -307,28 +402,128 @@
             text-align: center;
              /* padding-top: 2rem;  */
 
-            /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+            /* border-top: 10px solid rgba(175, 22, 22, 0.1); */
             /* opacity: 0.7; */
         }
         
-      
+        .footer-bottom p {
+            /* margin-bottom: 0.5rem; */
+        }
         
-        footer .bottom a {
+        .footer-bottom a {
             color: white;
-            text-decoration:underline;
-            z-index: 100;
-
-        } 
-
-
-
+            text-decoration: underline;
+        }
         
-
-</style>
-
+   
+        
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+ 
+        
+        .highlight {
+            background-color: rgba(105, 40, 203, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        
+        .update-info {
+            background: #fff8e6;
+            border: 1px solid #ffeeba;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .update-info i {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #f0f7ff, #e6f7ff);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border: 1px solid #d1e9ff;
+        }
+        
+        .contact-box h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero p {
+                max-width: 100%;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+           
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .content-card, .privacy-page .content-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
 <body>
-
-
     <header>
         <div class="container">
             <nav class="navbar">
@@ -337,88 +532,127 @@
                     Bacode
                 </a>
                 <div class="nav-links">
-                    <!-- <a href="#" class="nav-link active" data-page="home">Home</a> -->
-                    <a href="w.html" class="nav-link active" data-page="home">Home</a>
-
+                    <a href="#" class="nav-link active" data-page="home">Home</a>
                     <!-- ok -->
                     <!-- <a href="contact.html" class="nav-link" data-page="services">Contact Us</a> -->
                     <!-- <a href="#" class="nav-link" data-page="pricing">Pricing</a> -->
                     <!-- <a href="#" class="nav-link" data-page="services">Services</a> -->
-                    <!-- <a href="contact.html">Contact Us</a> -->
+                    <a href="contact.html">Contact Us</a>
                     <a href="privacy.html" class="nav-link" data-page="privacy">Privacy</a>
+
                 </div>
-                <!-- <a href="#contact" class="btn">Hire Me</a> -->
+                <a href="https://www.freelancer.com/u/yeslolah?frm=yeslolah&sb=t" class="btn">Hire Me</a>
             </nav>
         </div>
-    </header>
-
-<one>
-<div class="container">
-    <div class="conta-content">
-        <div class="conta-col">
-            <h4>Contact Us</h4>
-            <p>Glad to answer your questions, choose your prefer way to contact us.</p>
-                 <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-        <!-- <div class="conta-col">
-            <h4>Quick Links</h4>
-            <ul class="conta-links">
-                <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
-                <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
-            </ul>
-        </div> -->
-      
-        <div class="conta-col">
-            <h4>Contact</h4>
-            <ul class="conta-links">
-                <li><a href="mailto:becode@yahoo.com"><i class="fas fa-envelope"></i> becode@yahoo.com</a></li>
-                <li><a href="tel:+31686475545"><i class="fas fa-phone"></i> +31 686475545</a></li>
+    </header>  
+  <!-- contact section -->
+    <div class="containe">
+        <div class="conta-content">
+            <div class="conta-col">
+                <h4>Contact Us</h4>
+                <p>Glad to answer your questions, choose your prefer way to contact us.</p>
+                     <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <!-- <a href="#"><i class="fab fa-intch"></i></a> -->
     
-            </ul>
-
-                
-            <div class="social-links">
-                <a href="#www.linkedin.com/in/baydaa-jaff-54a29250" target="_blank"><i class="fab fa-linkedin-in"></i>
-                <img src="linkedin-icon.svg" alt=""></a>
+                </div>
+            </div>
+            <!-- <div class="conta-col">
+                <h4>Quick Links</h4>
+                <ul class="conta-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                </ul>
+            </div> -->
+          
+            <div class="conta-col">
+                <h4>Contact</h4>
+                <ul class="conta-links">
+                    <li><a href="mailto:bayda.khan@yahoo.com"><i class="fas fa-envelope"></i> bayda.khan@yahoo.com</a></li>
+                    <li><a href="tel:+31686475545"><i class="fas fa-phone"></i> +31 686475545</a></li>
+        
+                </ul>
+    
+<!--                     
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+    
+                    <!-- <img src="linkedin-icon.svg" alt=""></a> -->
+                    <!-- <img src="linkedin-icon.svg" alt=""></a> -->
+<!--     
+                    <a href="#www.linkedin.com/in/baydaa-jaff-54a29250" target="_blank"><i class="fab fa-linkedin-in"></i>
+                        <img src="" alt=""></a> -->
+    
+                <!-- </div> --> 
+            </div>
+    
+            <div class="conta-col">
+                <h4 >Contact Form</h4>
+                <ul class="conta-links">
+                    <li><a href="contactform.html">Use the Contact form</a></li>
+                   
+                </ul>
+            </div>
+    
+    
+            <div class="conta-col">
+                <h4>Legal</h4>
+                <ul class="conta-links">
+                    <li><a href="#" class="privacy-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                </ul>
             </div>
         </div>
-
-        <div class="conta-col">
-            <h4 >Contact Form</h4>
-            <ul class="conta-links">
-                <li><a href="contactform.html">Use the Contact form</a></li>
-               
-            </ul>
-        </div>
-
-
-        <div class="conta-col">
-            <h4>Legal</h4>
-            <ul class="conta-links">
-                <li><a href="#" class="privacy-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-                <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- <div class="conta-bottom">
-        <p>&copy; 2025 Bacode. All rights reserved.</p>
-        <p>Payment processing powered by <a href="https://stripe.com" target="_blank">Stripe</a></p>
-    </div> -->
-</div>
-</one>
-
-<footer>
-
-    <div class="bottom">
-        <p>&copy; 2025 Bacode. All rights reserved.</p>
-        <p>Payment processing powered by <a href="https://stripe.com" target="_blank">Stripe</a></p>
+        <!-- <div class="conta-bottom">
+            <p>&copy; 2025 Bacode. All rights reserved.</p>
+            <p>Payment processing powered by <a href="https://stripe.com" target="_blank">Stripe</a></p>
+        </div> -->
     </div>
 
-</footer>
-   
+    <footer>
+        <div class="container">
+            <!-- <div class="footer-content">
+                <div class="footer-col">
+                    <h4>About Me</h4>
+                    <p>Professional web developer creating responsive, user-friendly websites and applications.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="privacy-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@devfreelance.com"><i class="fas fa-envelope"></i> b.freelancer@yahoo.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +31 686475545</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Netherland, Leiden</a></li>
+                    </ul>
+                </div>
+            </div> -->
+            <div class="footer-bottom">
+                <p>&copy; Bacode. All rights reserved.</p>
+                <p>Payment processing powered by <a href="https://stripe.com" target="_blank">Stripe</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
