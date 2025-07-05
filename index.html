@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelancer Portfolio - Web Developer</title>
+    <title>Bacode - Web Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="contactForm.html">
+    <link rel="stylesheet" href="privacy.html">
     <link rel="stylesheet" href="contact.html">
-    <link rel="stylesheet" href="contactform.html">
 
     <style>
         :root {
@@ -339,7 +340,7 @@
         }
         
         .price {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 600;
             color: var(--dark);
             margin: 1rem 0;
@@ -686,8 +687,8 @@
                     <!-- <a href="contact.html" class="nav-link" data-page="services">Contact Us</a> -->
                     <!-- <a href="#" class="nav-link" data-page="pricing">Pricing</a> -->
                     <!-- <a href="#" class="nav-link" data-page="services">Services</a> -->
-                    <a href="contact.html">Contact Us</a>
                     <a href="privacy.html" class="nav-link" data-page="privacy">Privacy</a>
+                    <a href="contact.html">Contact US</a>
                 </div>
                 <a href="https://www.freelancer.com/u/yeslolah?frm=yeslolah&sb=t" class="btn">Hire Me</a>
             </nav>
@@ -713,7 +714,7 @@
                     <div class="hero-image">
                         <!-- <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Development"> -->
                         <!-- <img src="b.freelancer.png" alt="Web Development"> -->
-                        <img src="b.freelanc.png" alt="Web Development">
+                        <img src="photos/b.freelanc.png" alt="Web Development">
 
                     </div>
                 </div>
@@ -770,25 +771,29 @@
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <h3>Basic Website</h3>
-                        <div class="price">€299 <span>/one-time</span></div>
+                        <div class="price">€249 <span>/one-time</span></div>
                         <ul class="features">
                             <li><i class="fas fa-check"></i> 5 Custom Pages</li>
                             <li><i class="fas fa-check"></i> Responsive Design</li>
                             <li><i class="fas fa-check"></i> 1 Month Support</li>
                         </ul>
-                        <button class="payment-button" id="payment-basic">Select Basic Plan</button>
+                        <!-- <button class="payment-button b1pay" id="payment-basic">Select Basic Plan</button> -->
+                        <a href="https://buy.stripe.com/9B67sMetyaRobnBapw0Fi00" button class="payment-button b1pay" id="payment-basic">Select Basic Plan</a>
+
                     </div>
                     
                     <div class="pricing-card popular">
                         <div class="popular-tag">Most Popular</div>
                         <h3>Business Website</h3>
-                        <div class="price">€566 <span>/one-time</span></div>
+                        <div class="price">€490 <span>/one-time</span></div>
                         <ul class="features">
                             <li><i class="fas fa-check"></i> 10 Custom Pages</li>
                             <li><i class="fas fa-check"></i> Responsive Design</li>
                             <li><i class="fas fa-check"></i> 3 Months Support</li>
                         </ul>
-                        <button class="payment-button" id="payment-business">Select Business Plan</button>
+                        
+                            <a href="https://buy.stripe.com/5kQ3cw99e7Fc8bpcxE0Fi01" button class="payment-button b2pay" id="payment-business">Select Business Plan
+                        </a>
                     </div>
                     
                     <!-- <div class="pricing-card">
@@ -877,8 +882,8 @@
             <div class="contact-box">
                 <h3>Contact Me</h3>
                 <p>If you have any questions, please contact me:</p>
-                <p><i class="fas fa-envelope"></i> bacode@yahoo.com</p>
-                <a href="mailto:bacode@yahoo.com" class="btn">
+                <p><i class="fas fa-envelope"></i> bayda.khan@yahoo.com</p>
+                <a href="mailto:bayda.khan@yahoo.com" class="btn">
                     <i class="fas fa-paper-plane"></i> Send Message
                 </a>
             </div>
@@ -922,7 +927,7 @@
                 </div>
             </div> -->
             <div class="footer-bottom">
-                <p>&copy; 2025 B.Freelancer. All rights reserved.</p>
+                <p>&copy; Bacode. All rights reserved.</p>
                 <p>Payment processing powered by <a href="https://stripe.com" target="_blank">Stripe</a></p>
             </div>
         </div>
@@ -975,21 +980,21 @@
                 showPage('privacy');
             });
             
-            // Stripe payment buttons
-            document.getElementById('payment-basic').addEventListener('click', function() {
-                // Replace with your actual Stripe payment link
-                window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
-            });
+            // // Stripe payment buttons
+            // document.getElementById('payment-basic').addEventListener('click', function() {
+            //     // Replace with your actual Stripe payment link
+            //     window.location.href = 'https://buy.stripe.com/9B67sMetyaRobnBapw0Fi00';
+            // });
             
-            document.getElementById('payment-business').addEventListener('click', function() {
-                // Replace with your actual Stripe payment link
-                window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
-            });
+            // document.getElementById('payment-business').addEventListener('click', function() {
+            //     // Replace with your actual Stripe payment link
+            //     window.location.href = 'https://buy.stripe.com/5kQ3cw99e7Fc8bpcxE0Fi01';
+            // });
             
-            document.getElementById('payment-ecommerce').addEventListener('click', function() {
-                // Replace with your actual Stripe payment link
-                window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
-            });
+            // document.getElementById('payment-ecommerce').addEventListener('click', function() {
+            //     // Replace with your actual Stripe payment link
+            //     window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
+            // });
             
             // Initialize with home page
             showPage('home');
