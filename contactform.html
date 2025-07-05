@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contactForm</title>
     <style>
-
-
-:root {
+        :root {
             --primary: #5c22d8;
             --secondary: #4615a9;
             --accent: #7248ef;
@@ -57,7 +55,7 @@
             align-items: center;
             padding: 1.2rem 0;
         }
-        
+       
         .logo {
             display: flex;
             align-items: center;
@@ -67,10 +65,19 @@
             color: var(--primary);
             text-decoration: none;
         }
-        
+         
         .logo i {
-            color: var(--accent);
+            /* color: var(--accent); */
+            color: red;
+            border:1px solid orange;
+
+
         }
+
+        /* .logo i{
+            color: green;
+            
+        } */
         
         .nav-links {
             display: flex;
@@ -112,20 +119,34 @@
         .nav-links a.active::after {
             width: 100%;
         }
-
-        h1{
-            padding-left: 30%;
-            align-items: center;
-            padding-top: 15px;
-            color: #4615a9;
-
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
         }
         
-     <!-- Basic styling  -->
-    body {
-        font-family: Arial, sans-
-    serif;}
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+    /* form section */
+ .con{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: ;
 
+ }
     .contact-form {
     max-width: 500px; margin: 20px auto;
     padding: 20px;
@@ -164,9 +185,82 @@
 
 
     }
+   
+   
+  
+        
+        /* Footer */
+        footer {
+            position: sticky;
+            margin-top: 100px;
+            background: #430eae;
+            color: white;
+            padding: 1rem 0 ;
+            /* position: absolute; */
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+       
+            /* position:; */
+            /* margin-top: 2rem; */
 
-            
-    .social-links {
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 1.5rem;
+            /* opacity: 0.8; */
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+        
+        .social-links {
             display: flex;
             gap: 15px;
             margin-top: 1.5rem;
@@ -185,7 +279,7 @@
         }
         
         .social-links a:hover {
-            background: var(--primary);
+            background: #430eae;
             transform: translateY(-3px);
         }
         
@@ -193,31 +287,184 @@
             text-align: center;
              /* padding-top: 2rem;  */
 
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            /* border-top: 10px solid rgba(175, 22, 22, 0.1); */
             /* opacity: 0.7; */
         }
         
-        .footer-bottom  {
-background-color: #4615a9;     
-color:white;
-   }
+        .footer-bottom p {
+            /* margin-bottom: 0.5rem; */
+        }
         
-        footer .footer-bottom a {
+        .footer-bottom a {
             color: white;
             text-decoration: underline;
         }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 5px;
+        
+        /* Privacy Page */
+        .privacy-page {
+            display: none;
+            padding: 5rem 0;
+        }
+        
+        .privacy-page.active {
+            display: block;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .privacy-page h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .privacy-page h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .privacy-page h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .privacy-page p {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .privacy-page ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .privacy-page li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .privacy-page li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .highlight {
+            background-color: rgba(105, 40, 203, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        
+        .update-info {
+            background: #fff8e6;
+            border: 1px solid #ffeeba;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .update-info i {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #f0f7ff, #e6f7ff);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border: 1px solid #d1e9ff;
+        }
+        
+        .contact-box h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
         
-
-    
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero p {
+                max-width: 100%;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .content-card, .privacy-page .content-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
     </style>
-
+    <link rel="stylesheet" href="privacy.html">
 </head>
 <body>
     <header>
@@ -233,99 +480,174 @@ color:white;
                     <!-- <a href="contact.html" class="nav-link" data-page="services">Contact Us</a> -->
                     <!-- <a href="#" class="nav-link" data-page="pricing">Pricing</a> -->
                     <!-- <a href="#" class="nav-link" data-page="services">Services</a> -->
-                    <!-- <a href="contact.html">Contact Us</a> -->
-                    <a href="#" class="nav-link" data-page="privacy">Privacy</a>
+                    <a href="contact.html">Contact Us</a>
+                    <!-- <a href="privacy.html" class="nav-link" data-page="privacy">Privacy</a> -->
                 </div>
-                <a href="#contact" class="btn">Hire Me</a>
+                <a href="https://www.freelancer.com/u/yeslolah?frm=yeslolah&sb=t" class="btn">Hire Me</a>
             </nav>
         </div>
     </header>
 
-    <h1>Contact Form</h1>
-   <div class="contact-form">
-    <form id="contactForm">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <h1 class="con">Contact Form</h1>
+    <div class="contact-form">
+     <form id="contactForm" action="https://formsubmit.co/bayda.khan@yahoo.com" method="post">
+ 
+         <div class="form-group">
+             <label for="name">Name:</label>
+             <input type="text" id="name" name="name" required>
+ 
+         </div>
+         <div class="form-group">
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email" required>
+         </div>
+ 
+         <div class="form-group">
+             <label for="message">Message:</label>
+             <textarea name="message" id="message" rows="5" required></textarea>
+         </div>
+         <button  class="form-group" type="submit">Send Message</button>
+         <!-- <button type="sub" class="email-btn" onClick="window.location.href='mailto:bayda.khan@yahoo.com'">Message </button> -->
+ 
+ 
+ 
+         <!-- <div id="message-status"></div>
+         <input type="hidden" name="_next"
+         value="https://www.bacode.nl/thank-you.html"> -->
+     </form>
+ 
+     <!-- <form id="contactForm">
+         <div class="form-group">
+             <label for="name">Name:</label>
+             <input type="text" id="name" name="name" required>
+ 
+         </div>
+         <div class="form-group">
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email" required>
+         </div>
+ 
+         <div class="form-group">
+             <label for="message">Message:</label>
+             <textarea name="message" id="message" rows="5" required></textarea>
+         </div>
+         <button type="submit">Send Message</button>
+         <!-- <button type="sub" class="email-btn" onClick="window.location.href='mailto:bayda.khan@yahoo.com'">Message </button> -->
+ 
+ 
+ 
+         <div id="message-status"></div>
+     </form> 
+    </div> 
 
+
+    <footer>
+        <div class="container">
+            <!-- <div class="footer-content">
+                <div class="footer-col">
+                    <h4>About Me</h4>
+                    <p>Professional web developer creating responsive, user-friendly websites and applications.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="privacy-link"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@devfreelance.com"><i class="fas fa-envelope"></i> b.freelancer@yahoo.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +31 686475545</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Netherland, Leiden</a></li>
+                    </ul>
+                </div>
+            </div> -->
+            <div class="footer-bottom">
+                <p>&copy; Bacode. All rights reserved.</p>
+                <p>Payment processing powered by <a href="https://stripe.com" target="_blank">Stripe</a></p>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea name="message" id="message" rows="5" required></textarea>
-        </div>
-        <button type="submit">Send Message</button>
-
-        <div id="message-status"></div>
-    </form>
-   </div> 
-
-<footer>
-<div class="footer-bottom">
-    <p>&copy; 2025 B.Freelancer. All rights reserved.</p>
-    <p>Payment processing powered by <a href="https://stripe.com" target="_blank">Stripe</a></p>
-</div>
-</div>
-</footer>
-
-<script>
-    // send button
-            document.getElementById('contactForm').addEventListener('submit', async(e) {
+    </footer>
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            const privacyLink = document.querySelector('.privacy-link');
+            const homePage = document.querySelector('main');
+            const privacyPage = document.getElementById('privacy-page');
+            
+            // Function to show a specific page
+            function showPage(pageId) {
+                // Hide all pages
+                homePage.style.display = 'none';
+                privacyPage.classList.remove('active');
+                
+                // Show the requested page
+                if (pageId === 'home') {
+                    homePage.style.display = 'block';
+                } else if (pageId === 'privacy') {
+                    privacyPage.classList.add('active');
+                    window.scrollTo(0, 0);
+                }
+                
+                // Update active navigation link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Add click event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
+            
+            // Add click event listener to footer privacy link
+            privacyLink.addEventListener('click', function(e) {
                 e.preventDefault();
-
-                const formData = {
-                     name:e.target.name.value,
-                     email:e.target.email.value,
-                     message:e.target.message.value
-                };
-
-                const statusE1 = 
-                document.getElementById('message-status');
-
-
-                try {
-                    const response = await
-                    fetch('http://localhost:3000/send-email', {
-                        method: 'post',
-                        headers: { 'Content-Type': 'application/json'},
-                        JSON.strongify(formData)
-                    });
-
-                    const resul = await
-                    response.json();
-
-                    if (response.ok) {
-statusEl.style.display = 'block';
-statusEl.style.background = '#d4edda';
-statusEl.style.color
-= '#155724' ;
-statusEl. textContent
-= 'Message sent successfully!';
-e. target.reset();
-} else {
-
-
-throw new
-Error (result. error
-| 'Failed to send
-message');
-｝
-}
-catch (error) {
-statusEl.style.display =
-'block';
-statusEl.style.background = '#f8d7da';
-statusEl.style.color =
-'#721c24';
-statusEl. textContent =
-'Error: ${error message}';
-｝}）；
-
-              
-</script>
+                showPage('privacy');
+            });
+            
+            // Stripe payment buttons
+            document.getElementById('payment-basic').addEventListener('click', function() {
+                // Replace with your actual Stripe payment link
+                window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
+            });
+            
+            document.getElementById('payment-business').addEventListener('click', function() {
+                // Replace with your actual Stripe payment link
+                window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
+            });
+            
+            // document.getElementById('payment-ecommerce').addEventListener('click', function() {
+            //     // Replace with your actual Stripe payment link
+            //     window.location.href = 'https://buy.stripe.com/test_14k5mW8wF6sJ4Qg144';
+            // });
+            
+            // Initialize with home page
+            showPage('home');
+        });
+    </script>  
 </body>
 </html>
